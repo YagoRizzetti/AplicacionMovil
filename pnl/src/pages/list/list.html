@@ -3,21 +3,33 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Temas</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+<ion-content class="card-background-page">
+  <ion-card>
+    <img src="https://k61.kn3.net/taringa/0/3/A/4/A/8/AztlanAcuario/373.jpg"/>
+    <div class="card-title">Higiene Mental</div>
+    <div class="card-subtitle">0 Ejercicios</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="http://estrategiaspnl.com/assets/metafora.jpg"/>
+    <div class="card-title">Metafora</div>
+    <div class="card-subtitle">0 Ejercicios</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="http://www.ingeniovirtual.com/wp-content/uploads/Mente-grafica.jpg"/>
+    <div class="card-title">Fitness cebreral</div>
+    <div class="card-subtitle">0 Ejercicios</div>
+  </ion-card>
+
+  <ion-card>
+    <img src="http://segured.com/wp-content/uploads/2016/09/lenguaje-corporal.png"/>
+    <div class="card-title">Lenguaje corporal</div>
+    <div class="card-subtitle">0 Ejercicios</div>
+  </ion-card>
+
 </ion-content>
