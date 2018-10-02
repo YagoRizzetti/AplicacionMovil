@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({name:'fitness', segment:'fitcer'})
 @Component({
   selector: 'page-fit-cer',
   templateUrl: 'fit-cer.html',

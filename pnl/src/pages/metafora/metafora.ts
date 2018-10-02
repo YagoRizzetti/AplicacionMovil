@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+@IonicPage({name:'metafora', segment:'metafora'})
 @Component({
   selector: 'page-metafora',
   templateUrl: 'metafora.html',
