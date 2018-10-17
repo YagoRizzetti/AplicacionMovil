@@ -17,6 +17,10 @@ import {HomePage} from '../home/home';
 })
 export class SignupPage {
 
+  username:string;
+  password:string;
+  repassword:string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -25,7 +29,9 @@ export class SignupPage {
   }
 
   signup(){
-    this.navCtrl.push(HomePage);
+    if(this.username.length==0 || this.password.length==0 || this.repassword.length==0){
+      alert("please fill all fields")
+    }
   }
 
 }

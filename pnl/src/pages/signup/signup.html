@@ -18,25 +18,17 @@
   <ion-list>
     
       <ion-item>
-        <ion-label fixed>name</ion-label>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label fixed>Email</ion-label>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label fixed>Username</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input type="text" placeholder="NickName..." [(ngModel)]="username"></ion-input>
       </ion-item>
           
       <ion-item>
-        <ion-label fixed>Password</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" placeholder="Password..." [(ngModel)]="password"></ion-input>
       </ion-item>
     
+      <ion-item>
+          <ion-input type="password" placeholder="repeat password..." [(ngModel)]="repass"></ion-input>
+        </ion-item>
+      
       <button ion-button block color="primary" (click)="signup()">signup</button>
 
     </ion-list>

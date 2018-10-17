@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup'
 /**
  * Generated class for the WelcomePage page.
@@ -14,12 +13,19 @@ import { SignupPage } from '../signup/signup'
   selector: 'page-welcome',
   templateUrl: 'welcome.html',
 })
-export class Welcome {
+export class WelcomePage {
+
+  username:string;
+  password:string;
+
   constructor(public navCtrl: NavController) {
   }
 
   login(){
-  this.navCtrl.push(LoginPage);
+    console.log("username " + this.username);
+
+    console.log("password " + this.password);
+    
   }
 
   signup(){
