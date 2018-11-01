@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { user } from '../../models/user';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import {HomePage} from '../home/home';
 
@@ -17,20 +19,18 @@ import {HomePage} from '../home/home';
 })
 export class SignupPage {
 
-  username:string;
-  password:string;
-  repassword:string;
+  user = {} as user;  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private ofAuth: AngularFireAuth, public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
-  }
-
-  signup(){
-    if(this.username.length==0 || this.password.length==0 || this.repassword.length==0){
-      alert("please fill all fields")
+  async signup(user: user){
+    try {
+    const result = await this.ofAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+    console.log(result);  
+    }
+    catch (e) {
+      console.error(e);
     }
   }
 

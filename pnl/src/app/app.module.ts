@@ -12,10 +12,13 @@ import {CreenciasPageModule} from '../pages/creencias/creencias.module';
 import {FitCerPageModule} from '../pages/fit-cer/fit-cer.module';
 import {LengCorpPageModule} from '../pages/leng-corp/leng-corp.module';
 import {MetaforaPageModule} from '../pages/metafora/metafora.module';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { DatabaseProvider } from '../providers/database/database';
+import { FIREBASE_CONFIG } from './app.firebase.config';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { DatabaseProvider } from '../providers/database/database';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule,
     IntEmoPageModule,
     CreenciasPageModule,
     FitCerPageModule,
@@ -43,11 +48,5 @@ import { DatabaseProvider } from '../providers/database/database';
     WelcomePage,
     SignupPage
   ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DatabaseProvider
-  ]
 })
 export class AppModule {}
