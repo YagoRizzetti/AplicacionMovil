@@ -18,13 +18,18 @@
   <ion-list>
     
       <ion-item>
-        <ion-input type="text" placeholder="Username" [(ngModel)]="user.email"></ion-input>
+        <ion-input type="text" placeholder="NickName..." [(ngModel)]="username"></ion-input>
       </ion-item>
+          
       <ion-item>
-        <ion-input type="password" placeholder="Password" [(ngModel)]="user.password"></ion-input>
+        <ion-input type="password" placeholder="Password..." [(ngModel)]="password"></ion-input>
       </ion-item>
+    
+      <ion-item>
+          <ion-input type="password" placeholder="repeat password..." [(ngModel)]="repass"></ion-input>
+        </ion-item>
       
-      <button ion-button block color="primary" (click)="signup(user)">signup</button>
+      <button ion-button block color="primary" (click)="signup()">signup</button>
 
     </ion-list>
 

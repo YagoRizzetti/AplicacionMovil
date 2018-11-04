@@ -8,8 +8,6 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 
-import { SQLite } from '@ionic-native/sqlite';
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -20,17 +18,8 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(
-    public platform: Platform,
-    public statusBar: StatusBar,
-    public splashScreen: SplashScreen,
-    public sqlite: SQLite
-  ) {
-    this.platform.ready().then(() => {
-      this.splashScreen.hide();
-      this.statusBar.styleDefault();
-    });
-  
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+    this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -54,17 +43,4 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-
-  private createDatabase(){
-    this.sqlite.create({
-      name: 'data.db',
-      location: 'default' // the location field is required
-    })
-    .then((db) => {
-      console.log(db);
-    })
-    .catch(error =>{
-      console.error(error);
-    });
-}
 }
