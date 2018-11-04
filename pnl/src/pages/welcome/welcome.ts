@@ -23,6 +23,6 @@ export class Welcome {
   }
 
   signup(){
-  this.navCtrl.push(SignupPage, {}, {animate:false});
+  this.navCtrl.push(SignupPage);
   }
 }
