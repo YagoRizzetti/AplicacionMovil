@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { WelcomePage } from '../pages/welcome/welcome';
+import { Welcome } from '../pages/welcome/welcome';
+import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -15,14 +16,14 @@ import {MetaforaPageModule} from '../pages/metafora/metafora.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { DatabaseProvider } from '../providers/database/database';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    WelcomePage,
+    Welcome,
+    LoginPage,
     SignupPage
   ],
   imports: [
@@ -40,14 +41,14 @@ import { DatabaseProvider } from '../providers/database/database';
     MyApp,
     HomePage,
     ListPage,
-    WelcomePage,
+    Welcome,
+    LoginPage,
     SignupPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DatabaseProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
