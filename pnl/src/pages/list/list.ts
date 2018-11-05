@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import {IntEmoPage} from '../int-emo/int-emo';
-import {CreenciasPage} from '../creencias/creencias';
-import {FitCerPage} from '../fit-cer/fit-cer';
-import {LengCorpPage} from '../leng-corp/leng-corp';
-import {MetaforaPage} from '../metafora/metafora';
-
+import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-list',
