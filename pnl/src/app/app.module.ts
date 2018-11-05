@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { Welcome } from '../pages/welcome/welcome';
-import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -26,7 +25,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     Welcome,
-    LoginPage,
     SignupPage
   ],
   imports: [
@@ -46,7 +44,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     Welcome,
-    LoginPage,
     SignupPage
   ],
   providers: [
