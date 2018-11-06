@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { SignupPage } from '../signup/signup'
+import { SignupPage } from '../signup/signup';
+import { HomePage } from '../home/home';
+
+import { user } from '../../models/user'
+import { AngularFireAuth } from 'angularfire2/auth'
+
 /**
  * Generated class for the WelcomePage page.
  *
@@ -14,10 +19,23 @@ import { SignupPage } from '../signup/signup'
   templateUrl: 'welcome.html',
 })
 export class Welcome {
-  constructor(public navCtrl: NavController) {
+
+  user ={} as user;
+
+  constructor( private afAuth: AngularFireAuth,
+    public navCtrl: NavController) {
   }
 
-  login(){
+  async login(user:user){
+    try{
+    const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email , user.password);
+    if(result){
+    this.navCtrl.setRoot(HomePage)
+    }
+    }
+    catch(e){
+      console.error(e);
+    }
   }
 
   signup(){

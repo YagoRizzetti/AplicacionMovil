@@ -14,6 +14,7 @@ import {LengCorpPageModule} from '../pages/leng-corp/leng-corp.module';
 import {MetaforaPageModule} from '../pages/metafora/metafora.module';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -31,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule,
     IntEmoPageModule,
     CreenciasPageModule,
     FitCerPageModule,
