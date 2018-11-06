@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 import { user } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -30,8 +31,8 @@ export class SignupPage {
 
   async signup(user:user){
     try{
-    const result = await this.afAuth.auth.createUserWithEmailAndPassword(user.email , user.password);
-    console.log(result);
+    this.afAuth.auth.createUserWithEmailAndPassword(user.email , user.password);
+    this.navCtrl.setRoot(HomePage)
     }
     catch(e){
       console.error(e);
