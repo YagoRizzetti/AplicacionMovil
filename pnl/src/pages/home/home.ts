@@ -18,13 +18,13 @@ export class HomePage {
       if (data && data.email && data.uid){
         this.toast.create({
           message:`Welcome to PNL, ${data.email}`,
-          duration:3000
+          duration:1000
         }).present();
       }
       else{
         this.toast.create({
           message:`could not find authentication details.`,
-          duration:3000
+          duration:1000
         }).present();
       }
     })
